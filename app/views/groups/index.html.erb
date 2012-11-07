@@ -3,7 +3,7 @@
 <table class="bordered-table">
   <tr>
     <th>Tên Nhóm</th>
-    <th></th>
+    <th class="span13"></th>
   </tr>
 
   <% @groups.each do |group| %>
@@ -17,8 +17,7 @@
       <%= link_to 'Sửa', edit_group_path(group),:class=>
       'btn small' %>
       <%= link_to 'Xóa', group, method: :delete, data: { confirm: 'Are you sure?' },:class=>'btn danger small' %></td>
-    <td></td>
-  </tr>
+      </tr>
   <% end %></table>
 
 <br />

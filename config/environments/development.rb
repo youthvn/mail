@@ -35,10 +35,10 @@ Mail::Application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :address              => "smtp.gmail.com",
-    :port                 => 587,
-    :domain               => '54.251.34.99',
-    :user_name            => 'youth.noreply@gmail.com',
+    :address              => "smtpout.mx.facebook.com",
+    :port                 => 25,
+    :domain               => 'smtpout.mx.facebook.com',
+    :user_name            => 'shinguyen195@gmail.com',
     :password             => 'Thienthan1!',
     :authentication       => 'plain',
     :enable_starttls_auto => true
