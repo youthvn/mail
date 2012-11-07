@@ -1,0 +1,14 @@
+    group_contacts GET    /groups/:group_id/contacts(.:format)          contacts#index
+                   POST   /groups/:group_id/contacts(.:format)          contacts#create
+ new_group_contact GET    /groups/:group_id/contacts/new(.:format)      contacts#new
+edit_group_contact GET    /groups/:group_id/contacts/:id/edit(.:format) contacts#edit
+     group_contact GET    /groups/:group_id/contacts/:id(.:format)      contacts#show
+                   PUT    /groups/:group_id/contacts/:id(.:format)      contacts#update
+                   DELETE /groups/:group_id/contacts/:id(.:format)      contacts#destroy
+            groups GET    /groups(.:format)                             groups#index
+                   POST   /groups(.:format)                             groups#create
+         new_group GET    /groups/new(.:format)                         groups#new
+        edit_group GET    /groups/:id/edit(.:format)                    groups#edit
+             group GET    /groups/:id(.:format)                         groups#show
+                   PUT    /groups/:id(.:format)                         groups#update
+                   DELETE /groups/:id(.:format)                         groups#destroy

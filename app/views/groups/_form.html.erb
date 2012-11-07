@@ -1,0 +1,37 @@
+<%= form_for(@group) do |f| %>
+<fieldset>
+    <legend>
+      <% if @group.id.blank? %>
+      Thêm Nhóm
+      <% else %>
+      <%= @group.name %>
+      <% end %></legend>
+    <% if @group.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@group.errors.count, "error") %>prohibited this group from being saved:</h2>
+      <ul>
+        <% @group.errors.full_messages.each do |msg| %>
+        <li>
+          <%= msg %></li>
+        <% end %></ul>
+    </div>
+    <% end %>
+    <div class="clearfix">
+      <label for="xlInput">Tên Nhóm</label>
+      <div class="input field">
+        <%= f.text_field :name,:placeholder=>'Tên Nhóm' %></div>
+    </div>
+    <div class="clearfix">
+      <div class="actions">
+        <% if @group.id.blank? %>
+        <%= f.submit 'Create', :class =>
+        'btn primary' %>
+        <% else %>
+        <%= f.submit 'Update', :class =>
+        'btn primary' %>
+        <% end %>
+        <%= link_to 'Back', groups_path,:class=>'btn'%></div>
+    </div>
+  </fieldset>
+  <% end %>

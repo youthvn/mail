@@ -1,0 +1,32 @@
+<h1><%= @group.name %></h1>
+
+<table class="condensed-table">
+    <thead>
+        <tr>
+            <th>Fullname</th>
+            <th>Birthday</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @contacts.each do |contact| %>
+        <tr>
+            <td>
+                <%= contact.fullname %></td>
+            <td>
+                <%= contact.birthday %></td>
+            <td>
+                <%= contact.email %></td>
+            <td>
+                <%= link_to 'Show', group_contact_path(@group,contact),:class=>
+                'btn' %>
+                <%= link_to 'Edit', edit_group_contact_path(@group,contact),:class=>
+                'btn' %>
+                <%= link_to 'Destroy', group_contact_path(@group,contact), method: :delete, data: { confirm: 'Are you sure?' },:class=>'btn danger' %></td>
+        </tr>
+    </tbody>
+    <% end %></table>
+<br />
+
+<%= link_to 'New Contact', new_group_contact_path %>
